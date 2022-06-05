@@ -27,11 +27,32 @@
       <img src="{{ project.image.url }}" class="img-fluid mb-2">
     </a>
     {% else %}
-
     <img src="{{ project.image.url }}" class="img-fluid mb-2">
     {% endif %}
     <h3>{{ project.title }}</h3>
     <p>{{ project.description }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<h2 class="mt-5">Скрипты и мелочи</h2>
+<hr>
+<div class="row">
+  {% for script in scripts %}
+  <div class="col-lg-4 col-md-6">
+
+    {% if script.url %}
+    <a href="{{ script.url }}">
+      <img src="{{ script.image.url }}" class="img-fluid mb-2">
+    </a>
+    {% else %}
+    <img src="{{ script.image.url }}" class="img-fluid mb-2">
+    {% endif %}
+    <h3>{{ script.title }}</h3>
+    <p>{{ script.description }}</p>
+    {% if script.file %}
+    <a href="{{ script.file.url }}">Скачать</a>
+    {% endif %}
 
   </div>
   {% endfor %}
